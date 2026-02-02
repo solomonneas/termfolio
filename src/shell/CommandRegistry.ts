@@ -9,12 +9,16 @@ export interface CommandContext {
   args: string[];
   rawInput: string;
   previousDir: string;
+  reprompt: () => void;
+  history: string[];
 }
 
 export interface Command {
   name: string;
   description: string;
   usage?: string;
+  async?: boolean;
+  hidden?: boolean;
   execute: (ctx: CommandContext) => void;
 }
 

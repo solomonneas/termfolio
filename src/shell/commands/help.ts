@@ -23,7 +23,9 @@ CommandRegistry.register({
       return;
     }
 
-    const commands = CommandRegistry.getAll().sort((a, b) => a.name.localeCompare(b.name));
+    const commands = CommandRegistry.getAll()
+      .filter((c) => !c.hidden)
+      .sort((a, b) => a.name.localeCompare(b.name));
 
     terminal.write(CRLF);
     terminal.write(`  ${BOLD}${FG.cyan}Available Commands${RESET}${CRLF}`);

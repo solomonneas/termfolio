@@ -13,6 +13,13 @@ import './commands/clear';
 import './commands/help';
 import './commands/whoami';
 import './commands/easter-eggs';
+import './commands/history';
+
+const ALIASES: Record<string, string> = {
+  'll': 'ls -l',
+  'la': 'ls -la',
+  '.': 'cd ..',
+};
 
 export class Shell {
   private terminal: Terminal;
@@ -279,7 +286,9 @@ export class Shell {
   }
 
   private executeCommand(input: string): void {
-    const parts = input.split(/\s+/);
+    // Resolve aliases before parsing
+    const resolved = ALIASES[input.trim()] ?? input;
+    const parts = resolved.split(/\s+/);
     const cmdName = parts[0];
     const args = parts.slice(1);
 
@@ -301,15 +310,15 @@ export class Shell {
         this.cwd = path;
       },
       args,
-      rawInput: input,
+      rawInput: resolved,
       previousDir: this.previousDir,
       reprompt: () => this.prompt(),
+      history: this.history,
     };
 
     command.execute(ctx);
 
-    // Don't re-prompt for async commands (like hack)
-    if (cmdName !== 'hack') {
+    if (!command.async) {
       this.prompt();
     }
   }

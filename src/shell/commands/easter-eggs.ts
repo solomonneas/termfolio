@@ -56,6 +56,7 @@ CommandRegistry.register({
 CommandRegistry.register({
   name: 'hack',
   description: '???',
+  async: true,
   execute: (ctx) => {
     const { terminal } = ctx;
     terminal.write(CRLF);
@@ -117,7 +118,7 @@ CommandRegistry.register({
         terminal.write(CRLF);
         terminal.write(`  ${FG.green}${BOLD}ACCESS GRANTED${RESET}${CRLF}`);
         terminal.write(`  ${DIM}Just kidding. But you looked cool doing it.${RESET}${CRLF}${CRLF}`);
-        (ctx as any).reprompt?.();
+        ctx.reprompt();
         return;
       }
 
