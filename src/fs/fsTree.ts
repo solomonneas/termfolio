@@ -21,6 +21,46 @@ export const fsTree: Record<string, FSNode> = {
           solomon: {
             type: 'dir',
             children: {
+              '.bashrc': {
+                type: 'file',
+                content: 'dotfile:bashrc',
+                permissions: '-rw-r--r--',
+                size: '1.2K',
+                modified: 'Jan 05 2025',
+              },
+              '.plan': {
+                type: 'file',
+                content: 'dotfile:plan',
+                permissions: '-rw-r--r--',
+                size: '0.3K',
+                modified: 'Dec 20 2024',
+              },
+              '.secrets': {
+                type: 'file',
+                content: 'dotfile:secrets',
+                permissions: '-rw-------',
+                size: '0.1K',
+                modified: 'Jan 01 2025',
+              },
+              '.ssh': {
+                type: 'dir',
+                children: {
+                  'authorized_keys': {
+                    type: 'file',
+                    content: 'dotfile:ssh-authorized-keys',
+                    permissions: '-rw-------',
+                    size: '0.4K',
+                    modified: 'Nov 15 2024',
+                  },
+                  'config': {
+                    type: 'file',
+                    content: 'dotfile:ssh-config',
+                    permissions: '-rw-------',
+                    size: '0.6K',
+                    modified: 'Jan 10 2025',
+                  },
+                },
+              },
               'about.md': {
                 type: 'file',
                 content: 'about',

@@ -49,7 +49,10 @@ CommandRegistry.register({
       return;
     }
 
-    if (entries.length === 0) {
+    // Filter hidden files (dotfiles) unless -a flag is set
+    const filtered = showAll ? entries : entries.filter((e) => !e.name.startsWith('.'));
+
+    if (filtered.length === 0) {
       terminal.write(CRLF);
       return;
     }
@@ -61,7 +64,7 @@ CommandRegistry.register({
         terminal.write(`  ${DIM}drwxr-xr-x${RESET}  ${DIM}4.0K${RESET}  ${DIM}Jan 31 2025${RESET}  ${BOLD}${FG.blue}.${RESET}${CRLF}`);
         terminal.write(`  ${DIM}drwxr-xr-x${RESET}  ${DIM}4.0K${RESET}  ${DIM}Jan 31 2025${RESET}  ${BOLD}${FG.blue}..${RESET}${CRLF}`);
       }
-      for (const entry of entries) {
+      for (const entry of filtered) {
         const isDir = entry.node.type === 'dir';
         const perms = entry.node.permissions ?? (isDir ? 'drwxr-xr-x' : '-rw-r--r--');
         const size = entry.node.size ?? (isDir ? '4.0K' : '0B');
@@ -72,7 +75,7 @@ CommandRegistry.register({
         terminal.write(`  ${DIM}${perms}${RESET}  ${DIM}${size.padStart(5)}${RESET}  ${DIM}${modified}${RESET}  ${name}${CRLF}`);
       }
     } else {
-      const items = entries.map(entry => {
+      const items = filtered.map(entry => {
         if (entry.node.type === 'dir') {
           return `${BOLD}${FG.blue}${entry.name}/${RESET}`;
         }
