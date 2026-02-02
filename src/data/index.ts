@@ -3,7 +3,9 @@ import { getProjectTermfolio, getProjectHomelab, getProjectSolomonNeasDev } from
 import { getExperience } from './experience';
 import { getEducation } from './education';
 import { getResume } from './resume';
-import { getBlogHelloWorld } from './blog';
+import { getBlogHelloWorld, getBlogHomelabJourney, getBlogWhyTerminalPortfolio } from './blog';
+import { getSocials } from './socials';
+import { getCertifications } from './certifications';
 import { CRLF, DIM, RESET, FG, BOLD } from '../utils/ansi';
 
 // Content registry: maps filesystem content keys to ANSI string generators
@@ -16,6 +18,10 @@ const registry: Record<string, () => string> = {
   experience: getExperience,
   education: getEducation,
   'blog:hello-world': getBlogHelloWorld,
+  'blog:homelab-journey': getBlogHomelabJourney,
+  'blog:why-terminal-portfolio': getBlogWhyTerminalPortfolio,
+  socials: getSocials,
+  certifications: getCertifications,
   'dotfile:bashrc': () => {
     const lines = [
       '',

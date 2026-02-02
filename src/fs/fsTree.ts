@@ -68,6 +68,13 @@ export const fsTree: Record<string, FSNode> = {
                 size: '2.1K',
                 modified: 'Jan 15 2025',
               },
+              'socials.md': {
+                type: 'file',
+                content: 'socials',
+                permissions: '-rw-r--r--',
+                size: '0.5K',
+                modified: 'Feb 01 2025',
+              },
               'resume.pdf': {
                 type: 'file',
                 content: 'resume',
@@ -134,6 +141,32 @@ export const fsTree: Record<string, FSNode> = {
                     permissions: '-rw-r--r--',
                     size: '0.8K',
                     modified: 'Jan 30 2025',
+                  },
+                  'why-terminal-portfolio.md': {
+                    type: 'file',
+                    content: 'blog:why-terminal-portfolio',
+                    permissions: '-rw-r--r--',
+                    size: '1.2K',
+                    modified: 'Jan 31 2025',
+                  },
+                  'homelab-journey.md': {
+                    type: 'file',
+                    content: 'blog:homelab-journey',
+                    permissions: '-rw-r--r--',
+                    size: '1.5K',
+                    modified: 'Feb 12 2025',
+                  },
+                },
+              },
+              certifications: {
+                type: 'dir',
+                children: {
+                  'README.md': {
+                    type: 'file',
+                    content: 'certifications',
+                    permissions: '-rw-r--r--',
+                    size: '0.4K',
+                    modified: 'Jan 20 2025',
                   },
                 },
               },
