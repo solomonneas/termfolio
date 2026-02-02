@@ -1,0 +1,42 @@
+import { BOLD, FG, RESET, DIM, CRLF } from '../utils/ansi';
+
+export function getEducation(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> Education${RESET}`,
+    '',
+    `  ${BOLD}${FG.brightWhite}  M.S. Cybersecurity Intelligence & Information Security${RESET}`,
+    `  ${DIM}  University of South Florida | In Progress${RESET}`,
+    '',
+    `  ${DIM}  ──────────────────────────────────────────────${RESET}`,
+    '',
+    `  ${BOLD}${FG.brightWhite}  B.A.S. Supervision & Management${RESET}`,
+    `  ${DIM}  Polk State College | 2025${RESET}`,
+    '',
+    `  ${FG.green}  [+]${RESET} Focus: Business Information Technology, Database Implementation`,
+    '',
+    `  ${DIM}  ──────────────────────────────────────────────${RESET}`,
+    '',
+    `  ${BOLD}${FG.brightWhite}  A.S. Network Systems Engineering Technology${RESET}`,
+    `  ${DIM}  Polk State College | 2022${RESET}`,
+    '',
+    `  ${FG.green}  [+]${RESET} Specialization: Network Infrastructure & Systems Engineering`,
+    '',
+    `  ${DIM}  ──────────────────────────────────────────────${RESET}`,
+    '',
+    `  ${BOLD}${FG.brightWhite}  Collegiate High School${RESET}`,
+    `  ${DIM}  Polk State College | 2007${RESET}`,
+    '',
+    `  ${FG.green}  [+]${RESET} IT program: Cisco Networking and Systems Administration`,
+    '',
+    `  ${DIM}  ──────────────────────────────────────────────${RESET}`,
+    '',
+    `  ${BOLD}${FG.brightWhite}  Visual Arts${RESET}`,
+    `  ${DIM}  Harrison School for the Visual and Performing Arts | 2003 - 2005${RESET}`,
+    `  ${DIM}  Rochelle School of the Arts | Prior${RESET}`,
+    '',
+    `  ${FG.green}  [+]${RESET} Orchestra/Cello and Visual Arts`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
