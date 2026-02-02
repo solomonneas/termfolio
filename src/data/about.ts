@@ -24,9 +24,9 @@ export function getAbout(): string {
     '',
     `${BOLD}${FG.cyan}  >> Contact${RESET}`,
     '',
-    `  ${DIM}Email:${RESET}       ${link('solomon@solomonneas.dev', 'mailto:solomon@solomonneas.dev')}`,
-    `  ${DIM}GitHub:${RESET}      ${link('github.com/solomonneas', 'https://github.com/solomonneas')}`,
-    `  ${DIM}Website:${RESET}     ${link('solomonneas.dev', 'https://solomonneas.dev')}`,
+    `  ${DIM}Email:${RESET}       ${link('me@solomonneas.dev', 'mailto:me@solomonneas.dev')}`,
+    `  ${DIM}GitHub:${RESET}      https://github.com/solomonneas`,
+    `  ${DIM}Website:${RESET}     https://solomonneas.dev`,
     '',
   ];
   return lines.join(CRLF);
