@@ -18,7 +18,17 @@ export function getMOTD(): string {
     ...banner,
     '',
     `  ${dim}Welcome to Solomon Neas' interactive terminal portfolio.${RESET}`,
-    `  ${dim}Type ${FG.brightWhite}help${RESET}${dim} for a list of commands, or start exploring with ${FG.brightWhite}ls${RESET}${dim}.${RESET}`,
+    `  ${dim}This is a real terminal. Type commands and hit Enter.${RESET}`,
+    '',
+    `  ${accent}${BOLD}  Quick Start${RESET}`,
+    `  ${dim}  ──────────────────────────────────────────────${RESET}`,
+    `  ${FG.brightWhite}  ls${RESET}${dim}              see what's here${RESET}`,
+    `  ${FG.brightWhite}  cat about.md${RESET}${dim}    read about me${RESET}`,
+    `  ${FG.brightWhite}  cd projects${RESET}${dim}     explore my work${RESET}`,
+    `  ${FG.brightWhite}  cat resume.pdf${RESET}${dim}  view my resume${RESET}`,
+    `  ${FG.brightWhite}  help${RESET}${dim}            all commands${RESET}`,
+    '',
+    `  ${dim}  Pro tip: use ${FG.brightWhite}Tab${RESET}${dim} to autocomplete and ${FG.brightWhite}↑↓${RESET}${dim} for history.${RESET}`,
     '',
   ];
 
