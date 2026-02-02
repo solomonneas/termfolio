@@ -22,6 +22,7 @@ import './commands/man';
 import './commands/cowsay';
 import './commands/vim';
 import './commands/sl';
+import './commands/theme';
 
 const ALIASES: Record<string, string> = {
   'll': 'ls -l',
