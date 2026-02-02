@@ -20,6 +20,8 @@ import './commands/echo';
 import './commands/open';
 import './commands/man';
 import './commands/cowsay';
+import './commands/vim';
+import './commands/sl';
 
 const ALIASES: Record<string, string> = {
   'll': 'ls -l',
