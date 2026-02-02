@@ -1,5 +1,13 @@
 import { getAbout } from './about';
-import { getProjectTermfolio, getProjectHomelab, getProjectSolomonNeasDev } from './projects';
+import {
+  getProjectTermfolio, getProjectSOC, getProjectWatchtower,
+  getProjectVMwareMigration, getProjectHyperVMigration, getProjectLAIM,
+  getProjectLinuxLabs, getProjectNSETInventory, getProjectPortGrid,
+  getProjectNetworkObservability, getProjectSambaAD, getProjectNDGWorkshop,
+  getProjectHomelab, getProjectAPT44, getProjectWaterSecurity,
+  getProjectSolomonNeasDev, getProjectNeovim,
+  getProjectObsidian,
+} from './projects';
 import { getExperience } from './experience';
 import { getEducation } from './education';
 import { getResume } from './resume';
@@ -13,8 +21,23 @@ const registry: Record<string, () => string> = {
   about: getAbout,
   resume: getResume,
   'project:termfolio': getProjectTermfolio,
+  'project:soc': getProjectSOC,
+  'project:watchtower': getProjectWatchtower,
+  'project:vmware-migration': getProjectVMwareMigration,
+  'project:hyperv-migration': getProjectHyperVMigration,
+  'project:laim': getProjectLAIM,
+  'project:linux-labs': getProjectLinuxLabs,
+  'project:nset-inventory': getProjectNSETInventory,
+  'project:portgrid': getProjectPortGrid,
+  'project:network-observability': getProjectNetworkObservability,
+  'project:samba-ad': getProjectSambaAD,
+  'project:ndg-workshop': getProjectNDGWorkshop,
   'project:homelab': getProjectHomelab,
+  'project:apt44': getProjectAPT44,
+  'project:water-security': getProjectWaterSecurity,
   'project:solomonneas-dev': getProjectSolomonNeasDev,
+  'project:neovim': getProjectNeovim,
+  'project:obsidian': getProjectObsidian,
   experience: getExperience,
   education: getEducation,
   'blog:hello-world': getBlogHelloWorld,
