@@ -59,17 +59,19 @@ export class Shell {
   }
 
   private refreshLine(): void {
-    // Move cursor to start of input area, clear line, rewrite
     const promptLen = this.getPromptLength();
-    // Move to column 0
-    this.terminal.write('\r');
-    // Clear the line
-    this.terminal.write('\x1b[K');
-    // Write prompt + buffer
-    this.terminal.write(this.getPrompt() + this.buffer);
-    // Position cursor correctly
     const targetCol = promptLen + this.cursorPos;
-    this.terminal.write(`\r\x1b[${targetCol}C`);
+    // Hide cursor during redraw to prevent flicker
+    this.terminal.write(
+      '\x1b[?25l' +       // hide cursor
+      '\r' +               // move to column 0
+      '\x1b[K' +           // clear line
+      this.getPrompt() +   // write prompt
+      this.buffer +         // write buffer
+      '\r' +               // back to column 0
+      (targetCol > 0 ? `\x1b[${targetCol}C` : '') + // position cursor
+      '\x1b[?25h'          // show cursor
+    );
   }
 
   private handleInput(data: string): void {
