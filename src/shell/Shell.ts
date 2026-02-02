@@ -48,11 +48,50 @@ export class Shell {
 
   start(): void {
     this.terminal.write(getMOTD());
+
+    // URL routing: auto-execute command based on path
+    const routeCommands = this.getRouteCommands();
+    if (routeCommands) {
+      history.replaceState(null, '', '/');
+      // Execute each command silently (no auto-prompt between them)
+      for (const cmd of routeCommands) {
+        this.executeCommand(cmd, true);
+      }
+    }
+
     this.prompt();
 
     this.terminal.onData((data) => {
       this.handleInput(data);
     });
+  }
+
+  private getRouteCommands(): string[] | null {
+    const path = window.location.pathname.replace(/\/+$/, '').toLowerCase();
+    if (!path || path === '/') return null;
+
+    const routes: Record<string, string[]> = {
+      '/projects': ['cd projects', 'ls'],
+      '/about': ['cat about.md'],
+      '/resume': ['cat resume.pdf'],
+      '/experience': ['cat experience/README.md'],
+      '/education': ['cat education/README.md'],
+      '/blog': ['cd blog', 'ls'],
+      '/contact': ['cat socials.md'],
+      '/socials': ['cat socials.md'],
+      '/certifications': ['cat certifications/README.md'],
+      '/certs': ['cat certifications/README.md'],
+    };
+
+    const commands = routes[path];
+    if (commands) return commands;
+
+    // Unknown path: show 404
+    this.terminal.write(
+      `  ${FG.red}${BOLD}bash:${RESET} ${path}: No such file or directory${CRLF}`
+    );
+    history.replaceState(null, '', '/');
+    return null;
   }
 
   private getPrompt(): string {
@@ -294,7 +333,7 @@ export class Shell {
     }
   }
 
-  private executeCommand(input: string): void {
+  private executeCommand(input: string, silent = false): void {
     // Resolve aliases before parsing
     const resolved = ALIASES[input.trim()] ?? input;
     const parts = resolved.split(/\s+/);
@@ -306,7 +345,7 @@ export class Shell {
       this.terminal.write(
         `  ${FG.red}${BOLD}${cmdName}:${RESET} command not found. Type ${FG.brightWhite}help${RESET} for available commands.${CRLF}`
       );
-      this.prompt();
+      if (!silent) this.prompt();
       return;
     }
 
@@ -327,7 +366,7 @@ export class Shell {
 
     command.execute(ctx);
 
-    if (!command.async) {
+    if (!command.async && !silent) {
       this.prompt();
     }
   }
