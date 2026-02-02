@@ -1,4 +1,4 @@
-import { BOLD, FG, RESET, DIM, CRLF } from '../utils/ansi';
+import { BOLD, FG, RESET, DIM, CRLF, link } from '../utils/ansi';
 
 export function getResume(): string {
   const sep = `  ${DIM}──────────────────────────────────────────────────────────────────${RESET}`;
@@ -8,11 +8,11 @@ export function getResume(): string {
     `${BOLD}${FG.cyan}  ║${RESET}${BOLD}${FG.brightWhite}                        SOLOMON NEAS                           ${RESET}${BOLD}${FG.cyan}║${RESET}`,
     `${BOLD}${FG.cyan}  ╚════════════════════════════════════════════════════════════════╝${RESET}`,
     '',
-    `  ${DIM}Email:${RESET}     me@solomonneas.dev`,
+    `  ${DIM}Email:${RESET}     ${link('me@solomonneas.dev', 'mailto:me@solomonneas.dev')}`,
     `  ${DIM}Phone:${RESET}     (225) 229-5723`,
     `  ${DIM}Location:${RESET}  New Port Richey, FL`,
-    `  ${DIM}Web:${RESET}       solomonneas.dev`,
-    `  ${DIM}LinkedIn:${RESET}  linkedin.com/in/solomon-neas`,
+    `  ${DIM}Web:${RESET}       ${link('solomonneas.dev', 'https://solomonneas.dev')}`,
+    `  ${DIM}LinkedIn:${RESET}  ${link('linkedin.com/in/solomon-neas', 'https://www.linkedin.com/in/solomon-neas')}`,
     '',
     sep,
     '',

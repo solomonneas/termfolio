@@ -1,4 +1,4 @@
-import { BOLD, FG, RESET, DIM, CRLF } from '../utils/ansi';
+import { BOLD, FG, RESET, DIM, CRLF, link } from '../utils/ansi';
 
 export function getProjectTermfolio(): string {
   const lines = [
@@ -12,7 +12,7 @@ export function getProjectTermfolio(): string {
     `  ${FG.green}[+]${RESET} Easter eggs included`,
     '',
     `  ${DIM}Stack:${RESET}  React 19, TypeScript, xterm.js, Vite`,
-    `  ${DIM}URL:${RESET}    termfolio.solomonneas.dev`,
+    `  ${DIM}URL:${RESET}    ${link('termfolio.solomonneas.dev', 'https://termfolio.solomonneas.dev')}`,
     '',
   ];
   return lines.join(CRLF);
@@ -46,7 +46,7 @@ export function getProjectSolomonNeasDev(): string {
     `  ${FG.green}[+]${RESET} Clean, responsive design`,
     '',
     `  ${DIM}Stack:${RESET}  Next.js, TypeScript, Tailwind CSS`,
-    `  ${DIM}URL:${RESET}    solomonneas.dev`,
+    `  ${DIM}URL:${RESET}    ${link('solomonneas.dev', 'https://solomonneas.dev')}`,
     '',
   ];
   return lines.join(CRLF);
