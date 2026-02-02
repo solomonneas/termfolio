@@ -1,4 +1,4 @@
-import { BOLD, FG, RESET, DIM, CRLF, link } from '../utils/ansi';
+import { BOLD, FG, RESET, DIM, CRLF } from '../utils/ansi';
 
 export function getAbout(): string {
   const lines = [
@@ -24,7 +24,7 @@ export function getAbout(): string {
     '',
     `${BOLD}${FG.cyan}  >> Contact${RESET}`,
     '',
-    `  ${DIM}Email:${RESET}       ${link('me@solomonneas.dev', 'mailto:me@solomonneas.dev')}`,
+    `  ${DIM}Email:${RESET}       me@solomonneas.dev`,
     `  ${DIM}GitHub:${RESET}      https://github.com/solomonneas`,
     `  ${DIM}Website:${RESET}     https://solomonneas.dev`,
     '',
