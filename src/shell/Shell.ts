@@ -14,6 +14,12 @@ import './commands/help';
 import './commands/whoami';
 import './commands/easter-eggs';
 import './commands/history';
+import './commands/tree';
+import './commands/grep';
+import './commands/echo';
+import './commands/open';
+import './commands/man';
+import './commands/cowsay';
 
 const ALIASES: Record<string, string> = {
   'll': 'ls -l',
