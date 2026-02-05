@@ -60,14 +60,11 @@ export class Shell {
   start(): void {
     this.terminal.write(getMOTD());
 
-    // URL routing: auto-execute command based on path
+    // URL routing: auto-execute commands based on path
     const routeCommands = this.getRouteCommands();
     if (routeCommands) {
       history.replaceState(null, '', '/');
-      // Execute each command silently (no auto-prompt between them)
-      for (const cmd of routeCommands) {
-        this.executeCommand(cmd, true);
-      }
+      this.executeBootCommands(routeCommands);
     }
 
     this.prompt();
@@ -75,6 +72,20 @@ export class Shell {
     this.terminal.onData((data) => {
       this.handleInput(data);
     });
+  }
+
+  /**
+   * Execute boot commands (from URL routing) with proper prompt state.
+   * Shows each command as if the user typed it for clarity.
+   */
+  private executeBootCommands(commands: string[]): void {
+    for (const cmd of commands) {
+      // Write prompt + command to show what's being executed
+      this.terminal.write(CRLF + this.getPrompt() + cmd + CRLF);
+      // Execute without silent mode so command output appears naturally,
+      // but we'll call prompt() ourselves at the end of start()
+      this.executeCommand(cmd, true);
+    }
   }
 
   private getRouteCommands(): string[] | null {
