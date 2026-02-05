@@ -9,17 +9,21 @@ CommandRegistry.register({
     const { terminal, fs, cwd, args, setCwd, previousDir } = ctx;
 
     let target: string;
+    let displayPath: string; // What to show in error message
 
     if (args.length === 0) {
       target = '/home/solomon';
+      displayPath = '~';
     } else if (args[0] === '-') {
       target = previousDir;
+      displayPath = previousDir;
     } else {
       target = fs.resolve(args[0], cwd);
+      displayPath = args[0];
     }
 
     if (!fs.isDir(target)) {
-      terminal.write(`${CRLF}  ${FG.red}${BOLD}cd:${RESET} ${args[0] ?? target}: No such directory${CRLF}`);
+      terminal.write(`${CRLF}  ${FG.red}${BOLD}cd:${RESET} ${displayPath}: No such directory${CRLF}`);
       return;
     }
 
