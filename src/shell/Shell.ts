@@ -3,6 +3,7 @@ import { FileSystem } from '../fs/FileSystem';
 import { CommandRegistry } from './CommandRegistry';
 import { BOLD, FG, RESET, CRLF } from '../utils/ansi';
 import { getMOTD } from '../utils/motd';
+import { tokenize } from '../utils/tokenize';
 
 // Import all commands to register them
 import './commands/ls';
@@ -349,7 +350,7 @@ export class Shell {
   private executeCommand(input: string, silent = false): void {
     // Resolve aliases before parsing
     const resolved = ALIASES[input.trim()] ?? input;
-    const parts = resolved.split(/\s+/);
+    const parts = tokenize(resolved);
     const cmdName = parts[0];
     const args = parts.slice(1);
 
