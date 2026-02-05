@@ -23,11 +23,20 @@ import './commands/cowsay';
 import './commands/vim';
 import './commands/sl';
 import './commands/theme';
+import './commands/ping';
+import './commands/fortune';
+import './commands/weather';
+import './commands/top';
+import './commands/cmatrix';
+import './commands/snake';
+import './commands/figlet';
+import './commands/lolcat';
 
 const ALIASES: Record<string, string> = {
   'll': 'ls -l',
   'la': 'ls -la',
   '.': 'cd ..',
+  'tetris': 'snake',
 };
 
 export class Shell {
@@ -40,6 +49,7 @@ export class Shell {
   private history: string[] = [];
   private historyIndex = -1;
   private historyStash = '';
+  private inputLocked = false;
 
   constructor(terminal: Terminal) {
     this.terminal = terminal;
@@ -130,6 +140,9 @@ export class Shell {
   }
 
   private handleInput(data: string): void {
+    // When input is locked, the active command handles all input via its own onData listener
+    if (this.inputLocked) return;
+
     // Handle escape sequences
     if (data === '\x1b[A') {
       // Up arrow: history previous
@@ -362,6 +375,8 @@ export class Shell {
       previousDir: this.previousDir,
       reprompt: () => this.prompt(),
       history: this.history,
+      lockInput: () => { this.inputLocked = true; },
+      unlockInput: () => { this.inputLocked = false; },
     };
 
     command.execute(ctx);

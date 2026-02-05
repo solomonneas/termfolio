@@ -6,6 +6,6 @@ CommandRegistry.register({
   description: 'Print current user',
   usage: 'whoami',
   execute: (ctx) => {
-    ctx.terminal.write(`${CRLF}  solomon${CRLF}`);
+    ctx.terminal.write(`${CRLF}  A curious visitor. Welcome.${CRLF}${CRLF}`);
   },
 });

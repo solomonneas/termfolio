@@ -11,6 +11,8 @@ export interface CommandContext {
   previousDir: string;
   reprompt: () => void;
   history: string[];
+  lockInput: () => void;
+  unlockInput: () => void;
 }
 
 export interface Command {
