@@ -306,18 +306,28 @@ export class Shell {
   }
 
   private handleTab(): void {
-    const parts = this.buffer.split(' ');
+    // Cursor-aware completion: work with the token at cursor position
+    const leftOfCursor = this.buffer.slice(0, this.cursorPos);
+    const rightOfCursor = this.buffer.slice(this.cursorPos);
 
-    if (parts.length <= 1) {
+    // Find the start of the current token (word being completed)
+    const tokenStart = leftOfCursor.lastIndexOf(' ') + 1;
+    const prefix = leftOfCursor.slice(tokenStart);
+    const beforeToken = leftOfCursor.slice(0, tokenStart);
+
+    // Determine if this is command or path completion
+    const isFirstToken = beforeToken.trim() === '';
+
+    if (isFirstToken) {
       // Command completion
-      const prefix = parts[0];
       const matches = CommandRegistry.getAll()
         .map((c) => c.name)
         .filter((n) => n.startsWith(prefix));
 
       if (matches.length === 1) {
-        this.buffer = matches[0] + ' ';
-        this.cursorPos = this.buffer.length;
+        const completion = matches[0] + ' ';
+        this.buffer = beforeToken + completion + rightOfCursor;
+        this.cursorPos = beforeToken.length + completion.length;
         this.refreshLine();
       } else if (matches.length > 1) {
         this.terminal.write(CRLF + '  ' + matches.join('  ') + CRLF);
@@ -325,17 +335,16 @@ export class Shell {
       }
     } else {
       // Path completion
-      const partial = parts[parts.length - 1];
-      const lastSlash = partial.lastIndexOf('/');
+      const lastSlash = prefix.lastIndexOf('/');
       let dirPath: string;
-      let prefix: string;
+      let namePrefix: string;
 
       if (lastSlash >= 0) {
-        dirPath = this.fs.resolve(partial.slice(0, lastSlash + 1), this.cwd);
-        prefix = partial.slice(lastSlash + 1);
+        dirPath = this.fs.resolve(prefix.slice(0, lastSlash + 1), this.cwd);
+        namePrefix = prefix.slice(lastSlash + 1);
       } else {
         dirPath = this.cwd;
-        prefix = partial;
+        namePrefix = prefix;
       }
 
       const entries = this.fs.list(dirPath);
@@ -343,13 +352,13 @@ export class Shell {
 
       const matches = entries
         .map((e) => e.name + (e.node.type === 'dir' ? '/' : ''))
-        .filter((n) => n.startsWith(prefix));
+        .filter((n) => n.startsWith(namePrefix));
 
       if (matches.length === 1) {
-        const base = partial.slice(0, lastSlash >= 0 ? lastSlash + 1 : 0);
-        parts[parts.length - 1] = base + matches[0];
-        this.buffer = parts.join(' ');
-        this.cursorPos = this.buffer.length;
+        const base = prefix.slice(0, lastSlash >= 0 ? lastSlash + 1 : 0);
+        const completion = base + matches[0];
+        this.buffer = beforeToken + completion + rightOfCursor;
+        this.cursorPos = beforeToken.length + completion.length;
         this.refreshLine();
       } else if (matches.length > 1) {
         this.terminal.write(CRLF + '  ' + matches.join('  ') + CRLF);
