@@ -51,13 +51,18 @@ export function Terminal() {
     });
     observer.observe(containerRef.current);
 
-    // Re-focus on click anywhere
-    const handleClick = () => terminal.focus();
-    document.addEventListener('click', handleClick);
+    // Re-focus on click within terminal container (avoid interfering with links/accessibility)
+    const container = containerRef.current;
+    const handleClick = (e: MouseEvent) => {
+      // Don't steal focus if clicking an anchor (e.g., from WebLinksAddon)
+      if ((e.target as HTMLElement).closest('a')) return;
+      terminal.focus();
+    };
+    container.addEventListener('click', handleClick);
 
     return () => {
       observer.disconnect();
-      document.removeEventListener('click', handleClick);
+      container.removeEventListener('click', handleClick);
       terminal.dispose();
       terminalRef.current = null;
     };
