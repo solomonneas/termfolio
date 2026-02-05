@@ -173,10 +173,11 @@ CommandRegistry.register({
       }
 
       // Arrow keys: change direction (prevent 180-degree turns)
-      if (data === '\x1b[A' && dir.y !== 1) nextDir = { x: 0, y: -1 };    // up
-      if (data === '\x1b[B' && dir.y !== -1) nextDir = { x: 0, y: 1 };    // down
-      if (data === '\x1b[C' && dir.x !== -1) nextDir = { x: 1, y: 0 };    // right
-      if (data === '\x1b[D' && dir.x !== 1) nextDir = { x: -1, y: 0 };    // left
+      // Check against nextDir to handle rapid inputs within same tick
+      if (data === '\x1b[A' && nextDir.y !== 1) nextDir = { x: 0, y: -1 };    // up
+      if (data === '\x1b[B' && nextDir.y !== -1) nextDir = { x: 0, y: 1 };    // down
+      if (data === '\x1b[C' && nextDir.x !== -1) nextDir = { x: 1, y: 0 };    // right
+      if (data === '\x1b[D' && nextDir.x !== 1) nextDir = { x: -1, y: 0 };    // left
     });
 
     // Initial draw
