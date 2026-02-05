@@ -35,9 +35,12 @@ CommandRegistry.register({
       }
       // Small delay so terminal renders before browser steals focus
       setTimeout(() => {
-        const w = window.open(specialFiles[contentKey], '_blank');
+        const w = window.open(specialFiles[contentKey], '_blank', 'noopener,noreferrer');
         // Bring focus back to the terminal
-        if (w) window.focus();
+        if (w) {
+          w.opener = null;
+          window.focus();
+        }
       }, 100);
       return;
     }
