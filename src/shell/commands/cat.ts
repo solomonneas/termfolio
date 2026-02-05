@@ -1,6 +1,6 @@
 import { CommandRegistry, type CommandContext } from '../CommandRegistry';
 import { BOLD, FG, RESET, CRLF } from '../../utils/ansi';
-import { getContent, getNotFoundMessage, specialFiles } from '../../data';
+import { getContent, getNotFoundMessage, specialContentKeys } from '../../data';
 
 CommandRegistry.register({
   name: 'cat',
@@ -28,14 +28,14 @@ CommandRegistry.register({
     }
 
     // Open special files in a background tab (write content first, then open)
-    if (specialFiles[contentKey]) {
+    if (specialContentKeys[contentKey]) {
       const content = getContent(contentKey);
       if (content) {
         terminal.write(content);
       }
       // Small delay so terminal renders before browser steals focus
       setTimeout(() => {
-        const w = window.open(specialFiles[contentKey], '_blank', 'noopener,noreferrer');
+        const w = window.open(specialContentKeys[contentKey], '_blank', 'noopener,noreferrer');
         // Bring focus back to the terminal
         if (w) {
           w.opener = null;

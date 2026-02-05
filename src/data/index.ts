@@ -166,8 +166,9 @@ const registry: Record<string, () => string> = {
   hostname: () => `${CRLF}  solomon.neas.dev${CRLF}${CRLF}`,
 };
 
-// Special files that trigger browser actions
-export const specialFiles: Record<string, string> = {
+// Content keys that trigger browser actions (opens URL in new tab)
+// Maps content key -> URL to open
+export const specialContentKeys: Record<string, string> = {
   resume: 'https://www.solomonneas.dev/solomon_neas_resume.pdf',
 };
 
