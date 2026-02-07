@@ -37,7 +37,8 @@ function registerOpen(name: string) {
         return;
       }
 
-      window.open(url, '_blank');
+      const win = window.open(url, '_blank', 'noopener,noreferrer');
+      if (win) win.opener = null;
       terminal.write(`${CRLF}  ${DIM}Opening ${url}...${RESET}${CRLF}${CRLF}`);
     },
   });

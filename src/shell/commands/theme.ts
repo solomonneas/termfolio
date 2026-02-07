@@ -62,9 +62,23 @@ CommandRegistry.register({
 });
 
 function hexToRgb(hex: string): string {
-  const h = hex.replace('#', '');
-  const r = parseInt(h.substring(0, 2), 16);
-  const g = parseInt(h.substring(2, 4), 16);
-  const b = parseInt(h.substring(4, 6), 16);
+  if (!hex) return '0;0;0';
+
+  // Strip leading #
+  const h = hex.replace(/^#/, '');
+
+  // Validate: must be 3 or 6 hex characters
+  if (!/^[0-9a-fA-F]{3}$/.test(h) && !/^[0-9a-fA-F]{6}$/.test(h)) {
+    return '0;0;0';
+  }
+
+  // Expand 3-char shorthand (e.g. "f0c" -> "ff00cc")
+  const full = h.length === 3
+    ? h[0] + h[0] + h[1] + h[1] + h[2] + h[2]
+    : h;
+
+  const r = parseInt(full.substring(0, 2), 16);
+  const g = parseInt(full.substring(2, 4), 16);
+  const b = parseInt(full.substring(4, 6), 16);
   return `${r};${g};${b}`;
 }

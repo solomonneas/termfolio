@@ -1,4 +1,5 @@
 import { Terminal } from '@xterm/xterm';
+import type { IDisposable } from '@xterm/xterm';
 import { FileSystem } from '../fs/FileSystem';
 import { CommandRegistry } from './CommandRegistry';
 import { BOLD, FG, RESET, CRLF } from '../utils/ansi';
@@ -51,6 +52,7 @@ export class Shell {
   private historyIndex = -1;
   private historyStash = '';
   private inputLocked = false;
+  private onDataDisposable: IDisposable | null = null;
 
   constructor(terminal: Terminal) {
     this.terminal = terminal;
@@ -69,9 +71,16 @@ export class Shell {
 
     this.prompt();
 
-    this.terminal.onData((data) => {
+    this.onDataDisposable = this.terminal.onData((data) => {
       this.handleInput(data);
     });
+  }
+
+  destroy(): void {
+    if (this.onDataDisposable) {
+      this.onDataDisposable.dispose();
+      this.onDataDisposable = null;
+    }
   }
 
   /**
@@ -370,9 +379,18 @@ export class Shell {
   private executeCommand(input: string, silent = false): void {
     // Resolve aliases before parsing
     const resolved = ALIASES[input.trim()] ?? input;
-    const parts = tokenize(resolved);
-    const cmdName = parts[0];
-    const args = parts.slice(1);
+    const tokens = tokenize(resolved);
+
+    if (tokens === null) {
+      this.terminal.write(
+        `  ${FG.red}${BOLD}bash:${RESET} unexpected EOF while looking for matching quote${CRLF}`
+      );
+      if (!silent) this.prompt();
+      return;
+    }
+
+    const cmdName = tokens[0];
+    const args = tokens.slice(1);
 
     const command = CommandRegistry.get(cmdName);
     if (!command) {

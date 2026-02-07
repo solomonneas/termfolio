@@ -4,8 +4,10 @@
  * - Double quotes: "hello world" -> one token
  * - Single quotes: 'hello world' -> one token
  * - Backslash escapes: hello\ world -> one token
+ *
+ * Returns null if quotes are unmatched/unclosed (parse error).
  */
-export function tokenize(input: string): string[] {
+export function tokenize(input: string): string[] | null {
   const tokens: string[] = [];
   let current = '';
   let inDoubleQuote = false;
@@ -49,6 +51,11 @@ export function tokenize(input: string): string[] {
     }
 
     current += char;
+  }
+
+  // Detect unclosed quotes or trailing escape
+  if (inDoubleQuote || inSingleQuote || escaped) {
+    return null;
   }
 
   // Push final token

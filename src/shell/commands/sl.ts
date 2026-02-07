@@ -25,12 +25,14 @@ CommandRegistry.register({
     const cols = terminal.cols;
     let offset = cols;
 
+    ctx.lockInput();
     terminal.write('\x1b[?25l'); // hide cursor
 
     const interval = setInterval(() => {
       if (offset < -trainWidth) {
         clearInterval(interval);
         terminal.write('\x1b[?25h'); // show cursor
+        ctx.unlockInput();
         ctx.reprompt();
         return;
       }
