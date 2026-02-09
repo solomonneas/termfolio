@@ -371,3 +371,345 @@ export function getProjectMECM(): string {
   ];
   return lines.join(CRLF);
 }
+
+export function getProjectCyberBRIEF(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> CyberBRIEF${RESET}`,
+    `  ${DIM}AI-powered threat intelligence with BLUF reports${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} BLUF reports with ATT&CK mapping and IOC extraction`,
+    `  ${FG.green}[+]${RESET} Multi-model AI integration: Brave, Gemini, Perplexity APIs`,
+    `  ${FG.green}[+]${RESET} Real-time threat intelligence aggregation`,
+    `  ${FG.green}[+]${RESET} Automated tactical intelligence generation`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript, FastAPI, Brave/Gemini/Perplexity APIs`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/cyberbrief`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectBroHunter(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> Bro Hunter${RESET}`,
+    `  ${DIM}Zeek + Suricata threat hunting platform${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Beacon detection and DNS analysis`,
+    `  ${FG.green}[+]${RESET} MITRE ATT&CK mapping for network artifacts`,
+    `  ${FG.green}[+]${RESET} Real-time log correlation and alerting`,
+    `  ${FG.green}[+]${RESET} Interactive threat hunting workflows`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript, FastAPI, Tailwind`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/bro-hunter`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectFortiSim(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> FortiSim${RESET}`,
+    `  ${DIM}FortiGate firewall rule simulator${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Visual policy builder with drag-and-drop interface`,
+    `  ${FG.green}[+]${RESET} Real-time rule validation and conflict detection`,
+    `  ${FG.green}[+]${RESET} Traffic flow simulation and testing`,
+    `  ${FG.green}[+]${RESET} Configuration export to FortiGate CLI format`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/fortisim`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectFortiLogForge(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> FortiLogForge${RESET}`,
+    `  ${DIM}FortiGate log analysis and visualization${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Real-time log parsing and enrichment`,
+    `  ${FG.green}[+]${RESET} Interactive dashboards for security events`,
+    `  ${FG.green}[+]${RESET} Threat pattern detection and alerting`,
+    `  ${FG.green}[+]${RESET} Historical trend analysis and reporting`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/fortilogforge`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectPlaybookForge(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> Playbook Forge${RESET}`,
+    `  ${DIM}SOC playbook parser with mermaid diagram generation${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Natural language playbook parsing`,
+    `  ${FG.green}[+]${RESET} Automated workflow diagram generation`,
+    `  ${FG.green}[+]${RESET} MITRE ATT&CK technique mapping`,
+    `  ${FG.green}[+]${RESET} Export to multiple formats: Mermaid, JSON, Markdown`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/playbook-forge`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectIntelWorkbench(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> Intel Workbench${RESET}`,
+    `  ${DIM}OSINT and threat intelligence analysis workbench${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Multi-source data aggregation and correlation`,
+    `  ${FG.green}[+]${RESET} Entity relationship mapping and visualization`,
+    `  ${FG.green}[+]${RESET} Automated enrichment pipelines`,
+    `  ${FG.green}[+]${RESET} Export to MISP, TheHive, and other platforms`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/intel-workbench`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectSOCShowcase(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> SOC Showcase${RESET}`,
+    `  ${DIM}SOC Stack portfolio showcase with 5 design variants${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Five distinct UI/UX design implementations`,
+    `  ${FG.green}[+]${RESET} Responsive layouts for all screen sizes`,
+    `  ${FG.green}[+]${RESET} Dark/light theme support with smooth transitions`,
+    `  ${FG.green}[+]${RESET} Component library showcase`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/soc-showcase`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectMCPServers(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> MCP Servers${RESET}`,
+    `  ${DIM}9 Model Context Protocol servers bridging AI to security tools${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Zeek, Suricata, Wazuh, TheHive integration`,
+    `  ${FG.green}[+]${RESET} MISP, Cortex, MITRE ATT&CK connectivity`,
+    `  ${FG.green}[+]${RESET} Rapid7 InsightIDR and Sophos Central support`,
+    `  ${FG.green}[+]${RESET} Standardized MCP protocol for AI agent orchestration`,
+    '',
+    `  ${DIM}Stack:${RESET}  TypeScript, MCP SDK`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas?tab=repositories&q=mcp`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectModelArena(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> Model Arena${RESET}`,
+    `  ${DIM}LLM comparison and evaluation platform${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Side-by-side model comparison interface`,
+    `  ${FG.green}[+]${RESET} Multi-model prompt testing and benchmarking`,
+    `  ${FG.green}[+]${RESET} Response quality scoring and analytics`,
+    `  ${FG.green}[+]${RESET} Cost and latency tracking across providers`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript, Vite`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/model-arena`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectAPIForge(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> API Forge${RESET}`,
+    `  ${DIM}API testing and development workbench${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Postman-like interface with collection management`,
+    `  ${FG.green}[+]${RESET} Environment variable support and templating`,
+    `  ${FG.green}[+]${RESET} Request history and response caching`,
+    `  ${FG.green}[+]${RESET} Auto-generated code snippets for multiple languages`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/api-forge`,
+    `  ${DIM}Status:${RESET} ${FG.yellow}In Progress${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectPromptLibrary(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> Prompt Library${RESET}`,
+    `  ${DIM}Dual-mode prompt management with browse/copy UI and REST API${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Organized prompt collections with tagging and search`,
+    `  ${FG.green}[+]${RESET} One-click copy with syntax highlighting`,
+    `  ${FG.green}[+]${RESET} REST API for programmatic access`,
+    `  ${FG.green}[+]${RESET} Variable templating and placeholder support`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/prompt-library`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectUsageTracker(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> Usage Tracker${RESET}`,
+    `  ${DIM}Token usage and cost analytics for AI sessions${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Multi-model token tracking and cost breakdown`,
+    `  ${FG.green}[+]${RESET} Real-time usage dashboards with trend analysis`,
+    `  ${FG.green}[+]${RESET} Budget alerts and spending predictions`,
+    `  ${FG.green}[+]${RESET} Export to CSV and JSON for reporting`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/usage-tracker`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectComponentFossil(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> Component Fossil${RESET}`,
+    `  ${DIM}Visual gallery indexing components across projects${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Automated component extraction from codebases`,
+    `  ${FG.green}[+]${RESET} Color palette search and filtering`,
+    `  ${FG.green}[+]${RESET} Live preview with prop manipulation`,
+    `  ${FG.green}[+]${RESET} Component usage analytics and dependency tracking`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/component-fossil-record`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectPromptGenealogy(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> Prompt Genealogy${RESET}`,
+    `  ${DIM}Version control and analytics for AI prompts${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Git-like version control for prompt iterations`,
+    `  ${FG.green}[+]${RESET} Genealogy tree visualization with branching`,
+    `  ${FG.green}[+]${RESET} Side-by-side diff views for prompt comparison`,
+    `  ${FG.green}[+]${RESET} Performance metrics and A/B testing results`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/prompt-genealogy-tracker`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectProxGuard(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> ProxGuard${RESET}`,
+    `  ${DIM}Proxmox security auditor with CIS benchmarks${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Automated configuration parsing and analysis`,
+    `  ${FG.green}[+]${RESET} CIS benchmark compliance checking`,
+    `  ${FG.green}[+]${RESET} Remediation script generation`,
+    `  ${FG.green}[+]${RESET} Security posture reporting and recommendations`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/proxguard`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectHCIViz(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> HCI Viz${RESET}`,
+    `  ${DIM}Storage fabric simulator with Ceph/Nutanix engines${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Interactive storage topology visualization`,
+    `  ${FG.green}[+]${RESET} Replication animation and data flow simulation`,
+    `  ${FG.green}[+]${RESET} Failure scenario testing and recovery workflows`,
+    `  ${FG.green}[+]${RESET} Performance metrics and capacity planning`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/hci-viz`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectMistify(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> Mist-ify${RESET}`,
+    `  ${DIM}WiFi roaming simulator with 802.11k/v/r protocols${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Real-time RSSI physics simulation`,
+    `  ${FG.green}[+]${RESET} 802.11k/v/r protocol visualization`,
+    `  ${FG.green}[+]${RESET} Packet-level roaming analysis`,
+    `  ${FG.green}[+]${RESET} AP placement optimization tools`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/mist-ify`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectAIInvaders(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> AI Invaders${RESET}`,
+    `  ${DIM}Space Invaders clone built with React${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Classic arcade gameplay mechanics`,
+    `  ${FG.green}[+]${RESET} Canvas-based rendering with smooth animations`,
+    `  ${FG.green}[+]${RESET} High score tracking and leaderboard`,
+    `  ${FG.green}[+]${RESET} Responsive controls for keyboard and touch`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/ai-invaders`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
