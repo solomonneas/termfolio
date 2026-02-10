@@ -274,13 +274,6 @@ export const fsTree: Record<string, FSNode> = {
                     size: '1.7K',
                     modified: 'Feb 13 2026',
                   },
-                  'api-forge.md': {
-                    type: 'file',
-                    content: 'project:api-forge',
-                    permissions: '-rw-r--r--',
-                    size: '1.6K',
-                    modified: 'Feb 14 2026',
-                  },
                   'prompt-library.md': {
                     type: 'file',
                     content: 'project:prompt-library',
@@ -294,20 +287,6 @@ export const fsTree: Record<string, FSNode> = {
                     permissions: '-rw-r--r--',
                     size: '1.6K',
                     modified: 'Feb 16 2026',
-                  },
-                  'component-fossil.md': {
-                    type: 'file',
-                    content: 'project:component-fossil',
-                    permissions: '-rw-r--r--',
-                    size: '1.7K',
-                    modified: 'Feb 17 2026',
-                  },
-                  'prompt-genealogy.md': {
-                    type: 'file',
-                    content: 'project:prompt-genealogy',
-                    permissions: '-rw-r--r--',
-                    size: '1.7K',
-                    modified: 'Feb 18 2026',
                   },
                   'proxguard.md': {
                     type: 'file',
@@ -330,12 +309,12 @@ export const fsTree: Record<string, FSNode> = {
                     size: '1.7K',
                     modified: 'Feb 21 2026',
                   },
-                  'ai-invaders.md': {
+                  'variant-gallery.md': {
                     type: 'file',
-                    content: 'project:ai-invaders',
+                    content: 'project:variant-gallery',
                     permissions: '-rw-r--r--',
-                    size: '1.4K',
-                    modified: 'Feb 22 2026',
+                    size: '1.6K',
+                    modified: 'Feb 10 2026',
                   },
                 },
               },

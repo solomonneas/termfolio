@@ -543,24 +543,6 @@ export function getProjectModelArena(): string {
   return lines.join(CRLF);
 }
 
-export function getProjectAPIForge(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> API Forge${RESET}`,
-    `  ${DIM}API testing and development workbench${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Postman-like interface with collection management`,
-    `  ${FG.green}[+]${RESET} Environment variable support and templating`,
-    `  ${FG.green}[+]${RESET} Request history and response caching`,
-    `  ${FG.green}[+]${RESET} Auto-generated code snippets for multiple languages`,
-    '',
-    `  ${DIM}Stack:${RESET}  React, TypeScript`,
-    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/api-forge`,
-    `  ${DIM}Status:${RESET} ${FG.yellow}In Progress${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
 
 export function getProjectPromptLibrary(): string {
   const lines = [
@@ -594,44 +576,6 @@ export function getProjectUsageTracker(): string {
     '',
     `  ${DIM}Stack:${RESET}  React, TypeScript`,
     `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/usage-tracker`,
-    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
-
-export function getProjectComponentFossil(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> Component Fossil${RESET}`,
-    `  ${DIM}Visual gallery indexing components across projects${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Automated component extraction from codebases`,
-    `  ${FG.green}[+]${RESET} Color palette search and filtering`,
-    `  ${FG.green}[+]${RESET} Live preview with prop manipulation`,
-    `  ${FG.green}[+]${RESET} Component usage analytics and dependency tracking`,
-    '',
-    `  ${DIM}Stack:${RESET}  React, TypeScript`,
-    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/component-fossil-record`,
-    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
-
-export function getProjectPromptGenealogy(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> Prompt Genealogy${RESET}`,
-    `  ${DIM}Version control and analytics for AI prompts${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Git-like version control for prompt iterations`,
-    `  ${FG.green}[+]${RESET} Genealogy tree visualization with branching`,
-    `  ${FG.green}[+]${RESET} Side-by-side diff views for prompt comparison`,
-    `  ${FG.green}[+]${RESET} Performance metrics and A/B testing results`,
-    '',
-    `  ${DIM}Stack:${RESET}  React, TypeScript`,
-    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/prompt-genealogy-tracker`,
     `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
     '',
   ];
@@ -695,19 +639,19 @@ export function getProjectMistify(): string {
   return lines.join(CRLF);
 }
 
-export function getProjectAIInvaders(): string {
+export function getProjectVariantGallery(): string {
   const lines = [
     '',
-    `${BOLD}${FG.cyan}  >> AI Invaders${RESET}`,
-    `  ${DIM}Space Invaders clone built with React${RESET}`,
+    `${BOLD}${FG.cyan}  >> Variant Gallery${RESET}`,
+    `  ${DIM}Design variant rating and cataloging tool${RESET}`,
     '',
-    `  ${FG.green}[+]${RESET} Classic arcade gameplay mechanics`,
-    `  ${FG.green}[+]${RESET} Canvas-based rendering with smooth animations`,
-    `  ${FG.green}[+]${RESET} High score tracking and leaderboard`,
-    `  ${FG.green}[+]${RESET} Responsive controls for keyboard and touch`,
+    `${FG.green}[+]${RESET} Rate UI variants across portfolio projects`,
+    `${FG.green}[+]${RESET} Capture design rules and anti-patterns`,
+    `${FG.green}[+]${RESET} Screenshot lightbox with multi-image support`,
+    `${FG.green}[+]${RESET} Filter by rating, searchable tags`,
     '',
-    `  ${DIM}Stack:${RESET}  React, TypeScript`,
-    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/ai-invaders`,
+    `  ${DIM}Stack:${RESET}  FastAPI, Vanilla JS, Python`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/variant-gallery`,
     `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
     '',
   ];
