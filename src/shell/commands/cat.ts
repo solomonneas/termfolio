@@ -14,6 +14,27 @@ CommandRegistry.register({
       return;
     }
 
+    // Easter egg: /dev/urandom or /dev/random
+    if (args[0] === '/dev/urandom' || args[0] === '/dev/random') {
+      const hex = (n: number) => [...Array(n)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
+      const lines = [
+        '',
+        `  ${FG.green}${hex(64)}${RESET}`,
+        `  ${FG.green}${hex(64)}${RESET}`,
+        `  ${FG.green}${hex(64)}${RESET}`,
+        '',
+        `  ... just kidding. Here's what you're really looking for:`,
+        '',
+        `  ${BOLD}${FG.cyan}Email:${RESET}    me@solomonneas.dev`,
+        `  ${BOLD}${FG.cyan}GitHub:${RESET}   github.com/solomonneas`,
+        '',
+        `  The real randomness is my career path.`,
+        '',
+      ];
+      terminal.write(lines.join(CRLF));
+      return;
+    }
+
     const absPath = fs.resolve(args[0], cwd);
 
     if (fs.isDir(absPath)) {

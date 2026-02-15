@@ -31,7 +31,7 @@ export function getProjectSOC(): string {
     `  ${FG.green}[+]${RESET} Custom automation bridging alerts to incident response workflows`,
     '',
     `  ${DIM}Stack:${RESET}  Wazuh, TheHive, Cortex, MISP, Zeek, Suricata, Elasticsearch`,
-    `  ${DIM}Status:${RESET} ${FG.yellow}In Progress${RESET}`,
+    `  ${DIM}Status:${RESET} ${FG.yellow}Wazuh live, full stack in progress${RESET}`,
     '',
   ];
   return lines.join(CRLF);
@@ -95,24 +95,7 @@ export function getProjectHyperVMigration(): string {
   return lines.join(CRLF);
 }
 
-export function getProjectLAIM(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> LAIM (Lab Asset Inventory Manager)${RESET}`,
-    `  ${DIM}Async FastAPI rewrite of legacy PHP inventory system${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Automated device sync from Netdisco and LibreNMS with deduplication`,
-    `  ${FG.green}[+]${RESET} JWT auth with role-based access control (superuser/admin tiers)`,
-    `  ${FG.green}[+]${RESET} Point-in-time backup/restore with audit trails`,
-    `  ${FG.green}[+]${RESET} Docker Compose deployment with health checks`,
-    '',
-    `  ${DIM}Stack:${RESET}  FastAPI, PostgreSQL, SQLAlchemy 2.0, Docker, Python 3.12`,
-    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/laim`,
-    `  ${DIM}Status:${RESET} ${FG.yellow}In Progress${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
+// removed LAIM
 
 export function getProjectLinuxLabs(): string {
   const lines = [
@@ -301,76 +284,9 @@ export function getProjectSolomonNeasDev(): string {
   return lines.join(CRLF);
 }
 
-export function getProjectNeovim(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> Learning Neovim${RESET}`,
-    `  ${DIM}Custom Lua-based Neovim configuration${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Mastered modal editing and Verb + Noun grammar`,
-    `  ${FG.green}[+]${RESET} Telescope fuzzy finding for rapid file navigation`,
-    `  ${FG.green}[+]${RESET} Custom keyboard lighting scheme for vim grammar patterns`,
-    `  ${FG.green}[+]${RESET} NvChad configuration with LSP and Treesitter`,
-    '',
-    `  ${DIM}Stack:${RESET}  Neovim, Lua, NvChad, LSP, Treesitter`,
-    `  ${DIM}Status:${RESET} ${FG.yellow}In Progress${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
 
-export function getProjectOllama(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> Local LLMs (Ollama)${RESET}`,
-    `  ${DIM}Self-hosted AI for private, offline assistance${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Runs LLaMA and Mistral models without cloud dependency`,
-    `  ${FG.green}[+]${RESET} ComfyUI integration for Stable Diffusion workflows`,
-    `  ${FG.green}[+]${RESET} Python automation scripts connecting components via API`,
-    `  ${FG.green}[+]${RESET} Zero external data transmission`,
-    '',
-    `  ${DIM}Stack:${RESET}  Ollama, Python, ComfyUI, Stable Diffusion, Docker`,
-    `  ${DIM}Status:${RESET} ${FG.yellow}In Progress${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
 
-export function getProjectObsidian(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> Obsidian PKM${RESET}`,
-    `  ${DIM}Personal knowledge management second brain${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} PARA methodology with bi-directional linking`,
-    `  ${FG.green}[+]${RESET} Master files approach: one canonical note per concept`,
-    `  ${FG.green}[+]${RESET} Dataview plugin for dynamic database-like dashboards`,
-    `  ${FG.green}[+]${RESET} Mobile sync via DriveSync to Google Drive`,
-    '',
-    `  ${DIM}Stack:${RESET}  Obsidian, Markdown, Dataview, Templater`,
-    `  ${DIM}Status:${RESET} ${FG.yellow}In Progress${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
 
-export function getProjectMECM(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> Hardware MECM Integration${RESET}`,
-    `  ${DIM}Campus hardware lifecycle and endpoint management${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Optimized hardware lifecycle tracking across campus`,
-    `  ${FG.green}[+]${RESET} Automated endpoint management via MECM`,
-    `  ${FG.green}[+]${RESET} Active Directory integration for device policies`,
-    '',
-    `  ${DIM}Stack:${RESET}  Windows, Active Directory, MECM`,
-    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
 
 export function getProjectCyberBRIEF(): string {
   const lines = [
@@ -378,14 +294,17 @@ export function getProjectCyberBRIEF(): string {
     `${BOLD}${FG.cyan}  >> CyberBRIEF${RESET}`,
     `  ${DIM}AI-powered threat intelligence with BLUF reports${RESET}`,
     '',
-    `  ${FG.green}[+]${RESET} BLUF reports with ATT&CK mapping and IOC extraction`,
-    `  ${FG.green}[+]${RESET} Multi-model AI integration: Brave, Gemini, Perplexity APIs`,
-    `  ${FG.green}[+]${RESET} Real-time threat intelligence aggregation`,
-    `  ${FG.green}[+]${RESET} Automated tactical intelligence generation`,
+    `  ${FG.green}[+]${RESET} Live at cyberbrief.solomonneas.dev (Railway deploy)`,
+    `  ${FG.green}[+]${RESET} AI-powered BLUF threat intelligence reports`,
+    `  ${FG.green}[+]${RESET} Multi-source: Brave Search, Gemini, Perplexity APIs`,
+    `  ${FG.green}[+]${RESET} ATT&CK mapping and IOC extraction per report`,
+    `  ${FG.green}[+]${RESET} Weekly rotating topic system via cron automation`,
+    `  ${FG.green}[+]${RESET} Rate limited (3/hr, 5/day per IP) with BYOK deep research`,
     '',
-    `  ${DIM}Stack:${RESET}  React, TypeScript, FastAPI, Brave/Gemini/Perplexity APIs`,
+    `  ${DIM}Stack:${RESET}  React, TypeScript, FastAPI, Perplexity API, Railway`,
     `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/cyberbrief`,
-    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    `  ${DIM}URL:${RESET}    https://cyberbrief.solomonneas.dev`,
+    `  ${DIM}Status:${RESET} ${FG.green}Live${RESET}`,
     '',
   ];
   return lines.join(CRLF);
@@ -397,14 +316,18 @@ export function getProjectBroHunter(): string {
     `${BOLD}${FG.cyan}  >> Bro Hunter${RESET}`,
     `  ${DIM}Zeek + Suricata threat hunting platform${RESET}`,
     '',
-    `  ${FG.green}[+]${RESET} Beacon detection and DNS analysis`,
-    `  ${FG.green}[+]${RESET} MITRE ATT&CK mapping for network artifacts`,
-    `  ${FG.green}[+]${RESET} Real-time log correlation and alerting`,
-    `  ${FG.green}[+]${RESET} Interactive threat hunting workflows`,
+    `  ${FG.green}[+]${RESET} Zeek + Suricata threat hunting platform with 15+ analysis pages`,
+    `  ${FG.green}[+]${RESET} PCAP upload wizard with automated Zeek/Suricata/analysis pipeline`,
+    `  ${FG.green}[+]${RESET} Beacon detection, DNS threat analysis, session reconstruction`,
+    `  ${FG.green}[+]${RESET} Live packet capture management with tcpdump integration`,
+    `  ${FG.green}[+]${RESET} Threat intel feeds (OTX, AbuseIPDB) with bulk lookup`,
+    `  ${FG.green}[+]${RESET} Interactive analytics: top talkers, protocol breakdown, threat heatmap`,
+    `  ${FG.green}[+]${RESET} HTML/JSON report generation with executive summaries`,
+    `  ${FG.green}[+]${RESET} Global search (Ctrl+K) across IPs, domains, alerts, connections`,
     '',
-    `  ${DIM}Stack:${RESET}  React, TypeScript, FastAPI, Tailwind`,
+    `  ${DIM}Stack:${RESET}  React 18, TypeScript, FastAPI, Tailwind, Python`,
     `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/bro-hunter`,
-    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed (4 phases shipped)${RESET}`,
     '',
   ];
   return lines.join(CRLF);
@@ -524,24 +447,6 @@ export function getProjectMCPServers(): string {
   return lines.join(CRLF);
 }
 
-export function getProjectModelArena(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> Model Arena${RESET}`,
-    `  ${DIM}LLM comparison and evaluation platform${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Side-by-side model comparison interface`,
-    `  ${FG.green}[+]${RESET} Multi-model prompt testing and benchmarking`,
-    `  ${FG.green}[+]${RESET} Response quality scoring and analytics`,
-    `  ${FG.green}[+]${RESET} Cost and latency tracking across providers`,
-    '',
-    `  ${DIM}Stack:${RESET}  React, TypeScript, Vite`,
-    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/model-arena`,
-    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
 
 
 export function getProjectPromptLibrary(): string {
@@ -563,24 +468,6 @@ export function getProjectPromptLibrary(): string {
   return lines.join(CRLF);
 }
 
-export function getProjectUsageTracker(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> Usage Tracker${RESET}`,
-    `  ${DIM}Token usage and cost analytics for AI sessions${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Multi-model token tracking and cost breakdown`,
-    `  ${FG.green}[+]${RESET} Real-time usage dashboards with trend analysis`,
-    `  ${FG.green}[+]${RESET} Budget alerts and spending predictions`,
-    `  ${FG.green}[+]${RESET} Export to CSV and JSON for reporting`,
-    '',
-    `  ${DIM}Stack:${RESET}  React, TypeScript`,
-    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/usage-tracker`,
-    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
 
 export function getProjectProxGuard(): string {
   const lines = [
@@ -601,59 +488,6 @@ export function getProjectProxGuard(): string {
   return lines.join(CRLF);
 }
 
-export function getProjectHCIViz(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> HCI Viz${RESET}`,
-    `  ${DIM}Storage fabric simulator with Ceph/Nutanix engines${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Interactive storage topology visualization`,
-    `  ${FG.green}[+]${RESET} Replication animation and data flow simulation`,
-    `  ${FG.green}[+]${RESET} Failure scenario testing and recovery workflows`,
-    `  ${FG.green}[+]${RESET} Performance metrics and capacity planning`,
-    '',
-    `  ${DIM}Stack:${RESET}  React, TypeScript`,
-    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/hci-viz`,
-    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
 
-export function getProjectMistify(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> Mist-ify${RESET}`,
-    `  ${DIM}WiFi roaming simulator with 802.11k/v/r protocols${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Real-time RSSI physics simulation`,
-    `  ${FG.green}[+]${RESET} 802.11k/v/r protocol visualization`,
-    `  ${FG.green}[+]${RESET} Packet-level roaming analysis`,
-    `  ${FG.green}[+]${RESET} AP placement optimization tools`,
-    '',
-    `  ${DIM}Stack:${RESET}  React, TypeScript`,
-    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/mist-ify`,
-    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
 
-export function getProjectVariantGallery(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> Variant Gallery${RESET}`,
-    `  ${DIM}Design variant rating and cataloging tool${RESET}`,
-    '',
-    `${FG.green}[+]${RESET} Rate UI variants across portfolio projects`,
-    `${FG.green}[+]${RESET} Capture design rules and anti-patterns`,
-    `${FG.green}[+]${RESET} Screenshot lightbox with multi-image support`,
-    `${FG.green}[+]${RESET} Filter by rating, searchable tags`,
-    '',
-    `  ${DIM}Stack:${RESET}  FastAPI, Vanilla JS, Python`,
-    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/variant-gallery`,
-    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
+// removed Variant Gallery

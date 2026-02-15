@@ -120,13 +120,7 @@ export const fsTree: Record<string, FSNode> = {
                     size: '2.0K',
                     modified: 'Jan 10 2026',
                   },
-                  'laim.md': {
-                    type: 'file',
-                    content: 'project:laim',
-                    permissions: '-rw-r--r--',
-                    size: '2.4K',
-                    modified: 'Jan 05 2025',
-                  },
+                  // removed laim
                   'linux-vm-labs.md': {
                     type: 'file',
                     content: 'project:linux-labs',
@@ -197,20 +191,6 @@ export const fsTree: Record<string, FSNode> = {
                     size: '1.6K',
                     modified: 'Dec 10 2025',
                   },
-                  'neovim.md': {
-                    type: 'file',
-                    content: 'project:neovim',
-                    permissions: '-rw-r--r--',
-                    size: '1.4K',
-                    modified: 'Dec 20 2025',
-                  },
-                  'obsidian-pkm.md': {
-                    type: 'file',
-                    content: 'project:obsidian',
-                    permissions: '-rw-r--r--',
-                    size: '1.5K',
-                    modified: 'Jul 15 2025',
-                  },
                   'cyberbrief.md': {
                     type: 'file',
                     content: 'project:cyberbrief',
@@ -267,26 +247,12 @@ export const fsTree: Record<string, FSNode> = {
                     size: '2.0K',
                     modified: 'Feb 12 2026',
                   },
-                  'model-arena.md': {
-                    type: 'file',
-                    content: 'project:model-arena',
-                    permissions: '-rw-r--r--',
-                    size: '1.7K',
-                    modified: 'Feb 13 2026',
-                  },
                   'prompt-library.md': {
                     type: 'file',
                     content: 'project:prompt-library',
                     permissions: '-rw-r--r--',
                     size: '1.6K',
                     modified: 'Feb 15 2026',
-                  },
-                  'usage-tracker.md': {
-                    type: 'file',
-                    content: 'project:usage-tracker',
-                    permissions: '-rw-r--r--',
-                    size: '1.6K',
-                    modified: 'Feb 16 2026',
                   },
                   'proxguard.md': {
                     type: 'file',
@@ -295,27 +261,7 @@ export const fsTree: Record<string, FSNode> = {
                     size: '1.7K',
                     modified: 'Feb 19 2026',
                   },
-                  'hci-viz.md': {
-                    type: 'file',
-                    content: 'project:hci-viz',
-                    permissions: '-rw-r--r--',
-                    size: '1.7K',
-                    modified: 'Feb 20 2026',
-                  },
-                  'mistify.md': {
-                    type: 'file',
-                    content: 'project:mistify',
-                    permissions: '-rw-r--r--',
-                    size: '1.7K',
-                    modified: 'Feb 21 2026',
-                  },
-                  'variant-gallery.md': {
-                    type: 'file',
-                    content: 'project:variant-gallery',
-                    permissions: '-rw-r--r--',
-                    size: '1.6K',
-                    modified: 'Feb 10 2026',
-                  },
+                  // removed variant-gallery
                 },
               },
               experience: {

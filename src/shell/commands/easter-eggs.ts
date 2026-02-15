@@ -317,3 +317,325 @@ CommandRegistry.register({
     ctx.terminal.write(`${CRLF}  ${DIM}You can check out any time you like, but you can never leave.${RESET} 🎸${CRLF}${CRLF}`);
   },
 });
+
+// ── traceroute ────────────────────────────────────────────────────
+
+CommandRegistry.register({
+  name: 'traceroute',
+  description: 'Trace route to host',
+  usage: 'traceroute <host>',
+  hidden: true,
+  async: true,
+  execute: (ctx) => {
+    const { terminal } = ctx;
+    ctx.lockInput();
+
+    const hops = [
+      `${BOLD}traceroute${RESET} to solomonneas.dev (151.101.1.1), 9 hops max`,
+      ` ${FG.green}1${RESET}  localhost (127.0.0.1)  ${DIM}0.042 ms${RESET}`,
+      ` ${FG.green}2${RESET}  your-isp.net (10.0.0.1)  ${DIM}12.337 ms${RESET}`,
+      ` ${FG.green}3${RESET}  cloudflare-edge.net (172.67.1.1)  ${DIM}18.224 ms${RESET}`,
+      ` ${FG.green}4${RESET}  vercel-cdn.net (76.76.21.21)  ${DIM}22.891 ms${RESET}`,
+      ` ${FG.green}5${RESET}  ${FG.yellow}talent-pipeline.net${RESET} (10.30.0.1)  ${DIM}28.442 ms${RESET}`,
+      ` ${FG.green}6${RESET}  ${FG.yellow}recruiter-inbox.net${RESET} (10.30.0.2)  ${DIM}34.119 ms${RESET}`,
+      ` ${FG.green}7${RESET}  ${FG.yellow}hr-approval.corp${RESET} (10.30.0.3)  ${DIM}41.337 ms${RESET}`,
+      ` ${FG.green}8${RESET}  ${FG.yellow}offer-letter.corp${RESET} (10.30.0.4)  ${DIM}48.002 ms${RESET}`,
+      ` ${FG.cyan}9${RESET}  ${BOLD}solomonneas.dev${RESET} (151.101.1.1)  ${DIM}52.119 ms${RESET}`,
+      '',
+      `${FG.green}Trace complete.${RESET} Hiring Solomon is faster than you think.`,
+    ];
+
+    let i = 0;
+    terminal.write(CRLF);
+
+    function next() {
+      if (i >= hops.length) {
+        ctx.unlockInput();
+        terminal.write(CRLF);
+        ctx.reprompt();
+        return;
+      }
+      terminal.write(`  ${hops[i]}${CRLF}`);
+      i++;
+      setTimeout(next, 100 + Math.random() * 150);
+    }
+    next();
+  },
+});
+
+// ── nmap ──────────────────────────────────────────────────────────
+
+CommandRegistry.register({
+  name: 'nmap',
+  description: 'Network port scanner',
+  usage: 'nmap <host>',
+  hidden: true,
+  async: true,
+  execute: (ctx) => {
+    const { terminal } = ctx;
+    ctx.lockInput();
+
+    const lines = [
+      `${BOLD}Starting Nmap 7.94${RESET} ( https://nmap.org )`,
+      `Nmap scan report for ${BOLD}solomonneas.dev${RESET} (151.101.1.1)`,
+      '',
+      `${DIM}PORT      STATE    SERVICE          VERSION${RESET}`,
+      `${FG.green}22/tcp${RESET}    open     ssh              OpenSSH 9.6 (protocol 2.0)`,
+      `${FG.green}80/tcp${RESET}    open     http             nginx 1.25.4`,
+      `${FG.green}443/tcp${RESET}   open     https            Vercel Edge`,
+      `${FG.green}3000/tcp${RESET}  open     dev-server       React 19.0.0`,
+      `${FG.green}5173/tcp${RESET}  open     vite             Vite 6.1.0`,
+      `${FG.green}8000/tcp${RESET}  open     fastapi          Uvicorn 0.27.0`,
+      `${FG.green}8443/tcp${RESET}  open     soc-dashboard    Wazuh 4.7.2`,
+      `${FG.yellow}9090/tcp${RESET}  filtered prometheus`,
+      `${FG.cyan}31337/tcp${RESET} open     ${FG.brightYellow}easter-egg       You found it!${RESET}`,
+      '',
+      `9 services detected. ${FG.green}0 vulnerabilities found.${RESET}`,
+      `${DIM}(That's because I patch my stuff.)${RESET}`,
+    ];
+
+    let i = 0;
+    terminal.write(CRLF);
+
+    function next() {
+      if (i >= lines.length) {
+        ctx.unlockInput();
+        terminal.write(CRLF);
+        ctx.reprompt();
+        return;
+      }
+      terminal.write(`  ${lines[i]}${CRLF}`);
+      i++;
+      setTimeout(next, 80 + Math.random() * 120);
+    }
+    next();
+  },
+});
+
+// ── apt / brew (package manager) ─────────────────────────────────
+
+function packageInstall(ctx: ReturnType<typeof Object.create>) {
+  const { terminal } = ctx;
+  ctx.lockInput();
+
+  const steps = [
+    `${DIM}Reading package lists... Done${RESET}`,
+    `${DIM}Building dependency tree... Done${RESET}`,
+    `The following ${BOLD}NEW${RESET} packages will be installed:`,
+    `  ${FG.cyan}solomon-neas${RESET} (v2026.2.15)`,
+    `${DIM}Unpacking solomon-neas (v2026.2.15) ...${RESET}`,
+    `Setting up ${BOLD}solomon-neas${RESET} ...`,
+    `  Installing: ${FG.green}full-stack-development${RESET} ... done`,
+    `  Installing: ${FG.green}cybersecurity-engineering${RESET} ... done`,
+    `  Installing: ${FG.green}network-infrastructure${RESET} ... done`,
+    `  Installing: ${FG.green}teaching-ability${RESET} ... done`,
+    `  Installing: ${FG.yellow}questionable-humor${RESET} ... done`,
+    '',
+    `${FG.green}solomon-neas is now available system-wide.${RESET}`,
+    `Run '${BOLD}sudo hire me${RESET}' to activate.`,
+  ];
+
+  let i = 0;
+  terminal.write(CRLF);
+
+  function next() {
+    if (i >= steps.length) {
+      ctx.unlockInput();
+      terminal.write(CRLF);
+      ctx.reprompt();
+      return;
+    }
+    terminal.write(`  ${steps[i]}${CRLF}`);
+    i++;
+    setTimeout(next, 150 + Math.random() * 200);
+  }
+  next();
+}
+
+CommandRegistry.register({
+  name: 'apt',
+  description: 'Package manager',
+  usage: 'apt install <package>',
+  hidden: true,
+  async: true,
+  execute: (ctx) => packageInstall(ctx),
+});
+
+CommandRegistry.register({
+  name: 'brew',
+  description: 'Package manager',
+  usage: 'brew install <package>',
+  hidden: true,
+  async: true,
+  execute: (ctx) => packageInstall(ctx),
+});
+
+// ── uptime ────────────────────────────────────────────────────────
+
+CommandRegistry.register({
+  name: 'uptime',
+  description: 'Show system uptime',
+  usage: 'uptime',
+  execute: (ctx) => {
+    const birth = new Date('2026-01-31T00:00:00');
+    const now = new Date();
+    const diff = now.getTime() - birth.getTime();
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const timeStr = now.toTimeString().slice(0, 8);
+
+    ctx.terminal.write(
+      `${CRLF}  ${timeStr} up ${BOLD}${days} days${RESET}, ${hours}:${mins.toString().padStart(2, '0')},  1 user,  load average: 0.42, 0.38, 0.35${CRLF}${CRLF}`
+    );
+  },
+});
+
+// ── git log ───────────────────────────────────────────────────────
+
+CommandRegistry.register({
+  name: 'git',
+  description: 'Version control',
+  usage: 'git <command>',
+  hidden: true,
+  execute: (ctx) => {
+    const sub = ctx.args[0];
+
+    if (sub !== 'log') {
+      ctx.terminal.write(`${CRLF}  ${DIM}git: '${sub || ''}' is not a git command. Try 'git log'.${RESET}${CRLF}${CRLF}`);
+      return;
+    }
+
+    const commits = [
+      {
+        hash: 'a1b2c3d',
+        refs: 'HEAD -> main, origin/main',
+        date: 'Feb 2026',
+        msg: 'feat: building 30+ app AI pipeline with multi-model orchestration',
+      },
+      {
+        hash: 'd4e5f6a',
+        refs: '',
+        date: 'Jan 2026',
+        msg: 'feat: launched CyberBRIEF threat intel platform (live deploy)',
+      },
+      {
+        hash: 'b7c8d9e',
+        refs: '',
+        date: '2025',
+        msg: 'feat: migrated 6-node VMware cluster to Proxmox ($343K saved)',
+      },
+      {
+        hash: 'e0f1a2b',
+        refs: '',
+        date: '2024',
+        msg: 'feat: built open-source SOC monitoring 200+ endpoints',
+      },
+      {
+        hash: 'c3d4e5f',
+        refs: '',
+        date: '2023',
+        msg: 'init: started M.S. Cybersecurity Intelligence at USF',
+      },
+    ];
+
+    const lines = [''];
+    for (const c of commits) {
+      const refStr = c.refs ? ` (${FG.cyan}${c.refs}${RESET})` : '';
+      lines.push(`  ${FG.yellow}commit ${c.hash}${RESET}${refStr}`);
+      lines.push(`  Author: Solomon Neas <me@solomonneas.dev>`);
+      lines.push(`  ${DIM}Date:   ${c.date}${RESET}`);
+      lines.push('');
+      lines.push(`      ${c.msg}`);
+      lines.push('');
+    }
+    ctx.terminal.write(lines.join(CRLF));
+  },
+});
+
+// ── curl ──────────────────────────────────────────────────────────
+
+CommandRegistry.register({
+  name: 'curl',
+  description: 'Transfer data from URLs',
+  usage: 'curl <url>',
+  hidden: true,
+  execute: (ctx) => {
+    const input = ctx.args.join(' ').toLowerCase();
+
+    if (!input.includes('hire') && !input.includes('solomonneas')) {
+      ctx.terminal.write(`${CRLF}  ${DIM}curl: try 'curl solomonneas.dev/api/hire'${RESET}${CRLF}${CRLF}`);
+      return;
+    }
+
+    const json = [
+      '',
+      `  ${FG.brightWhite}{${RESET}`,
+      `    ${FG.cyan}"status"${RESET}: ${FG.yellow}200${RESET},`,
+      `    ${FG.cyan}"message"${RESET}: ${FG.green}"Solomon is available for hire"${RESET},`,
+      `    ${FG.cyan}"data"${RESET}: {`,
+      `      ${FG.cyan}"name"${RESET}: ${FG.green}"Solomon Neas"${RESET},`,
+      `      ${FG.cyan}"title"${RESET}: ${FG.green}"Full-Stack Developer & Security Engineer"${RESET},`,
+      `      ${FG.cyan}"available"${RESET}: ${FG.yellow}true${RESET},`,
+      `      ${FG.cyan}"response_time"${RESET}: ${FG.green}"< 24 hours"${RESET},`,
+      `      ${FG.cyan}"contact"${RESET}: ${FG.green}"me@solomonneas.dev"${RESET},`,
+      `      ${FG.cyan}"skills"${RESET}: [${FG.green}"React"${RESET}, ${FG.green}"Python"${RESET}, ${FG.green}"TypeScript"${RESET}, ${FG.green}"FastAPI"${RESET}, ${FG.green}"Proxmox"${RESET}, ${FG.green}"SOC/NOC"${RESET}],`,
+      `      ${FG.cyan}"fun_fact"${RESET}: ${FG.green}"Built this terminal portfolio from scratch"${RESET}`,
+      `    }`,
+      `  ${FG.brightWhite}}${RESET}`,
+      '',
+    ];
+    ctx.terminal.write(json.join(CRLF));
+  },
+});
+
+// ── ssh ───────────────────────────────────────────────────────────
+
+CommandRegistry.register({
+  name: 'ssh',
+  description: 'Secure shell',
+  usage: 'ssh <host>',
+  hidden: true,
+  async: true,
+  execute: (ctx) => {
+    const { terminal } = ctx;
+    ctx.lockInput();
+
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-US', {
+      weekday: 'short', year: 'numeric', month: 'short', day: 'numeric',
+    });
+
+    const steps = [
+      { text: `${DIM}Connecting to solomonneas.dev...${RESET}`, delay: 800 },
+      { text: `${FG.yellow}Warning:${RESET} Permanently added 'solomonneas.dev' (ED25519) to known hosts.`, delay: 600 },
+      { text: '', delay: 300 },
+      { text: `Welcome to ${BOLD}TermfolioOS 1.0${RESET} (GNU/Linux 5.15.0-generic x86_64)`, delay: 200 },
+      { text: '', delay: 100 },
+      { text: ` * ${BOLD}Portfolio:${RESET}  https://solomonneas.dev`, delay: 80 },
+      { text: ` * ${BOLD}GitHub:${RESET}     https://github.com/solomonneas`, delay: 80 },
+      { text: ` * ${BOLD}Email:${RESET}      me@solomonneas.dev`, delay: 80 },
+      { text: '', delay: 200 },
+      { text: `${DIM}Last login: ${dateStr} from your-ip-address${RESET}`, delay: 300 },
+      { text: '', delay: 200 },
+      { text: `You're already here. What more do you want? ${FG.brightYellow}😏${RESET}`, delay: 0 },
+    ];
+
+    let i = 0;
+    terminal.write(CRLF);
+
+    function next() {
+      if (i >= steps.length) {
+        ctx.unlockInput();
+        terminal.write(CRLF);
+        ctx.reprompt();
+        return;
+      }
+      terminal.write(`  ${steps[i].text}${CRLF}`);
+      const delay = steps[i].delay;
+      i++;
+      setTimeout(next, delay);
+    }
+    next();
+  },
+});

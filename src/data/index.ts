@@ -1,17 +1,16 @@
 import { getAbout } from './about';
 import {
   getProjectTermfolio, getProjectSOC, getProjectWatchtower,
-  getProjectVMwareMigration, getProjectHyperVMigration, getProjectLAIM,
+  getProjectVMwareMigration, getProjectHyperVMigration,
   getProjectLinuxLabs, getProjectNSETInventory, getProjectPortGrid,
   getProjectNetworkObservability, getProjectSambaAD, getProjectNDGWorkshop,
   getProjectHomelab, getProjectAPT44, getProjectWaterSecurity,
-  getProjectSolomonNeasDev, getProjectNeovim, getProjectObsidian,
+  getProjectSolomonNeasDev,
   getProjectCyberBRIEF, getProjectBroHunter, getProjectFortiSim,
   getProjectFortiLogForge, getProjectPlaybookForge, getProjectIntelWorkbench,
-  getProjectSOCShowcase, getProjectMCPServers, getProjectModelArena,
-  getProjectPromptLibrary, getProjectUsageTracker,
+  getProjectSOCShowcase, getProjectMCPServers,
+  getProjectPromptLibrary,
   getProjectProxGuard,
-  getProjectHCIViz, getProjectMistify, getProjectVariantGallery,
 } from './projects';
 import { getExperience } from './experience';
 import { getEducation } from './education';
@@ -30,7 +29,7 @@ const registry: Record<string, () => string> = {
   'project:watchtower': getProjectWatchtower,
   'project:vmware-migration': getProjectVMwareMigration,
   'project:hyperv-migration': getProjectHyperVMigration,
-  'project:laim': getProjectLAIM,
+  // removed laim
   'project:linux-labs': getProjectLinuxLabs,
   'project:nset-inventory': getProjectNSETInventory,
   'project:portgrid': getProjectPortGrid,
@@ -41,8 +40,6 @@ const registry: Record<string, () => string> = {
   'project:apt44': getProjectAPT44,
   'project:water-security': getProjectWaterSecurity,
   'project:solomonneas-dev': getProjectSolomonNeasDev,
-  'project:neovim': getProjectNeovim,
-  'project:obsidian': getProjectObsidian,
   'project:cyberbrief': getProjectCyberBRIEF,
   'project:bro-hunter': getProjectBroHunter,
   'project:fortisim': getProjectFortiSim,
@@ -51,13 +48,9 @@ const registry: Record<string, () => string> = {
   'project:intel-workbench': getProjectIntelWorkbench,
   'project:soc-showcase': getProjectSOCShowcase,
   'project:mcp-servers': getProjectMCPServers,
-  'project:model-arena': getProjectModelArena,
   'project:prompt-library': getProjectPromptLibrary,
-  'project:usage-tracker': getProjectUsageTracker,
   'project:proxguard': getProjectProxGuard,
-  'project:hci-viz': getProjectHCIViz,
-  'project:mistify': getProjectMistify,
-  'project:variant-gallery': getProjectVariantGallery,
+  // removed variant-gallery
   experience: getExperience,
   education: getEducation,
   'blog:hello-world': getBlogHelloWorld,
