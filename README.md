@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://solomonneas.dev/projects/termfolio"><img src="https://img.shields.io/badge/Portfolio-solomonneas.dev-22c55e?style=flat-square" alt="Portfolio" /></a>
+</p>
+
 # Termfolio
 
 A terminal-themed portfolio website built with React, TypeScript, and xterm.js. Navigate through a virtual filesystem to explore projects, experience, education, and more using familiar shell commands.
