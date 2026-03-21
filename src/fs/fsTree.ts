@@ -120,6 +120,34 @@ export const fsTree: Record<string, FSNode> = {
                     size: '2.0K',
                     modified: 'Jan 10 2026',
                   },
+                  'soc-stack.md': {
+                    type: 'file',
+                    content: 'project:soc-stack',
+                    permissions: '-rw-r--r--',
+                    size: '2.0K',
+                    modified: 'Mar 20 2026',
+                  },
+                  'ops-deck.md': {
+                    type: 'file',
+                    content: 'project:ops-deck',
+                    permissions: '-rw-r--r--',
+                    size: '2.2K',
+                    modified: 'Mar 21 2026',
+                  },
+                  'code-search-api.md': {
+                    type: 'file',
+                    content: 'project:code-search',
+                    permissions: '-rw-r--r--',
+                    size: '1.9K',
+                    modified: 'Mar 19 2026',
+                  },
+                  'openclaw-best-practices.md': {
+                    type: 'file',
+                    content: 'project:openclaw-guides',
+                    permissions: '-rw-r--r--',
+                    size: '1.8K',
+                    modified: 'Mar 21 2026',
+                  },
                   // removed laim
                   'linux-vm-labs.md': {
                     type: 'file',
@@ -127,13 +155,6 @@ export const fsTree: Record<string, FSNode> = {
                     permissions: '-rw-r--r--',
                     size: '1.9K',
                     modified: 'Nov 20 2025',
-                  },
-                  'nset-hardware-inventory.md': {
-                    type: 'file',
-                    content: 'project:nset-inventory',
-                    permissions: '-rw-r--r--',
-                    size: '1.7K',
-                    modified: 'Dec 01 2024',
                   },
                   'portgrid.md': {
                     type: 'file',
@@ -155,20 +176,6 @@ export const fsTree: Record<string, FSNode> = {
                     permissions: '-rw-r--r--',
                     size: '2.0K',
                     modified: 'Jan 18 2026',
-                  },
-                  'ndg-proxmox-workshop.md': {
-                    type: 'file',
-                    content: 'project:ndg-workshop',
-                    permissions: '-rw-r--r--',
-                    size: '1.5K',
-                    modified: 'Jul 10 2025',
-                  },
-                  'homelab.md': {
-                    type: 'file',
-                    content: 'project:homelab',
-                    permissions: '-rw-r--r--',
-                    size: '2.4K',
-                    modified: 'Nov 10 2024',
                   },
                   'apt44-intelligence.md': {
                     type: 'file',
@@ -205,20 +212,6 @@ export const fsTree: Record<string, FSNode> = {
                     size: '1.7K',
                     modified: 'Feb 06 2026',
                   },
-                  'fortisim.md': {
-                    type: 'file',
-                    content: 'project:fortisim',
-                    permissions: '-rw-r--r--',
-                    size: '1.6K',
-                    modified: 'Feb 07 2026',
-                  },
-                  'fortilogforge.md': {
-                    type: 'file',
-                    content: 'project:fortilogforge',
-                    permissions: '-rw-r--r--',
-                    size: '1.6K',
-                    modified: 'Feb 08 2026',
-                  },
                   'playbook-forge.md': {
                     type: 'file',
                     content: 'project:playbook-forge',
@@ -232,13 +225,6 @@ export const fsTree: Record<string, FSNode> = {
                     permissions: '-rw-r--r--',
                     size: '1.8K',
                     modified: 'Feb 10 2026',
-                  },
-                  'soc-showcase.md': {
-                    type: 'file',
-                    content: 'project:soc-showcase',
-                    permissions: '-rw-r--r--',
-                    size: '1.5K',
-                    modified: 'Feb 11 2026',
                   },
                   'mcp-servers.md': {
                     type: 'file',

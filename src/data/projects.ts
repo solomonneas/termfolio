@@ -53,7 +53,7 @@ export function getProjectWatchtower(): string {
     `  ${DIM}Stack:${RESET}  FastAPI, React, TypeScript, Redis, WebSocket, ReactFlow`,
     `  ${DIM}URL:${RESET}    https://watchtower.solomonneas.dev`,
     `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/watchtower`,
-    `  ${DIM}Status:${RESET} ${FG.yellow}In Progress${RESET}`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
     '',
   ];
   return lines.join(CRLF);
@@ -89,7 +89,84 @@ export function getProjectHyperVMigration(): string {
     `  ${FG.green}[+]${RESET} Open-source Samba AD file server automation toolkit`,
     '',
     `  ${DIM}Stack:${RESET}  Windows Server, Hyper-V, Proxmox VE, Active Directory, PowerShell`,
-    `  ${DIM}Status:${RESET} ${FG.yellow}In Progress${RESET}`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectSOCStack(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> SOC Stack${RESET}`,
+    `  ${DIM}Unified SOC deployment toolkit${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} One-command deployment for each tool: Wazuh, TheHive, Cortex, MISP`,
+    `  ${FG.green}[+]${RESET} Hyper-V VM automation with Docker Compose stacks`,
+    `  ${FG.green}[+]${RESET} Pre-wired integrations between all SOC components`,
+    `  ${FG.green}[+]${RESET} Fully unattended installs with sane production defaults`,
+    '',
+    `  ${DIM}Stack:${RESET}  Bash, Docker Compose, Hyper-V, PowerShell`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/soc-stack`,
+    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectOpsDeck(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> Ops Deck${RESET}`,
+    `  ${DIM}Self-hosted operational dashboard for AI agent setups${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Cron job calendar, agent intel feeds, security audit panel`,
+    `  ${FG.green}[+]${RESET} Network infrastructure map with device discovery`,
+    `  ${FG.green}[+]${RESET} Semantic code search with Ollama embeddings`,
+    `  ${FG.green}[+]${RESET} Prompt library with tagging, search, and REST API`,
+    `  ${FG.green}[+]${RESET} Docker Compose one-liner deployment`,
+    '',
+    `  ${DIM}Stack:${RESET}  React, TypeScript, FastAPI, SQLite, Ollama, Docker`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/ops-deck-oss`,
+    `  ${DIM}Status:${RESET} ${FG.green}Live${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectCodeSearch(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> Code Search API${RESET}`,
+    `  ${DIM}Local semantic code search with hybrid retrieval${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Language-aware chunking across Python, TypeScript, Bash, and more`,
+    `  ${FG.green}[+]${RESET} Hybrid search combining embeddings + keyword matching`,
+    `  ${FG.green}[+]${RESET} Ollama-powered embeddings (qwen3-embedding) with zero cloud dependency`,
+    `  ${FG.green}[+]${RESET} FastAPI REST interface for agent and CLI integration`,
+    '',
+    `  ${DIM}Stack:${RESET}  Python, FastAPI, SQLite, Ollama, qwen3-embedding`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/code-search-api`,
+    `  ${DIM}Status:${RESET} ${FG.green}Live${RESET}`,
+    '',
+  ];
+  return lines.join(CRLF);
+}
+
+export function getProjectOpenClawGuides(): string {
+  const lines = [
+    '',
+    `${BOLD}${FG.cyan}  >> OpenClaw Best Practices${RESET}`,
+    `  ${DIM}Production guides for running AI agents in the real world${RESET}`,
+    '',
+    `  ${FG.green}[+]${RESET} Security hardening and infrastructure patterns`,
+    `  ${FG.green}[+]${RESET} Agent orchestration and multi-model workflows`,
+    `  ${FG.green}[+]${RESET} Operational runbooks from real deployments`,
+    `  ${FG.green}[+]${RESET} Written from 6+ months of daily production use`,
+    '',
+    `  ${DIM}Stack:${RESET}  Markdown, OpenClaw, Production Experience`,
+    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/openclaw-best-practices`,
+    `  ${DIM}Status:${RESET} ${FG.green}Published${RESET}`,
     '',
   ];
   return lines.join(CRLF);
@@ -109,25 +186,6 @@ export function getProjectLinuxLabs(): string {
     `  ${FG.green}[+]${RESET} Complete instructor guides and student documentation`,
     '',
     `  ${DIM}Stack:${RESET}  Rocky Linux, Fedora, Ubuntu 24.04, Proxmox VE, NETLAB+`,
-    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
-
-export function getProjectNSETInventory(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> NSET Hardware Inventory${RESET}`,
-    `  ${DIM}BAS Capstone: IT asset tracking CRUD application${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Secure auth with bcrypt hashing and login throttling`,
-    `  ${FG.green}[+]${RESET} Multi-field search across serial, model, brand, location, status`,
-    `  ${FG.green}[+]${RESET} CSV export preserving current search filters`,
-    `  ${FG.green}[+]${RESET} Role-based access with 37 predefined locations`,
-    '',
-    `  ${DIM}Stack:${RESET}  PHP, MariaDB, PDO, JavaScript`,
-    `  ${DIM}Grade:${RESET}  ${FG.green}100%${RESET}`,
     `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
     '',
   ];
@@ -185,42 +243,6 @@ export function getProjectSambaAD(): string {
     `  ${DIM}Stack:${RESET}  Ubuntu 24.04, Samba, Active Directory, Proxmox VE, XFS`,
     `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/samba-ad-migration`,
     `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
-
-export function getProjectNDGWorkshop(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> NDG Proxmox Workshop${RESET}`,
-    `  ${DIM}18-hour intensive Proxmox VE 8 deployment training${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Infrastructure foundations, clustering, and production deployment`,
-    `  ${FG.green}[+]${RESET} HA, backup strategies with Proxmox Backup Server`,
-    `  ${FG.green}[+]${RESET} NETLAB+ pod deployment and linked clone workflows`,
-    `  ${FG.green}[+]${RESET} Applied immediately to production infrastructure`,
-    '',
-    `  ${DIM}Stack:${RESET}  Proxmox VE 8, NETLAB+, Clustering, KVM/QEMU`,
-    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
-
-export function getProjectHomelab(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> Proxmox Homelab${RESET}`,
-    `  ${DIM}Multi-node virtualization cluster for DevOps and security testing${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Three-node Proxmox VE cluster with high availability`,
-    `  ${FG.green}[+]${RESET} Ceph distributed storage with VM replication`,
-    `  ${FG.green}[+]${RESET} VLAN segmentation for network isolation`,
-    `  ${FG.green}[+]${RESET} Hosts Pi-hole, Gitea, Grafana, and monitoring services`,
-    '',
-    `  ${DIM}Stack:${RESET}  Proxmox VE, Ceph, ZFS, Linux, Networking`,
-    `  ${DIM}Status:${RESET} ${FG.yellow}In Progress${RESET}`,
     '',
   ];
   return lines.join(CRLF);
@@ -333,44 +355,6 @@ export function getProjectBroHunter(): string {
   return lines.join(CRLF);
 }
 
-export function getProjectFortiSim(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> FortiSim${RESET}`,
-    `  ${DIM}FortiGate firewall rule simulator${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Visual policy builder with drag-and-drop interface`,
-    `  ${FG.green}[+]${RESET} Real-time rule validation and conflict detection`,
-    `  ${FG.green}[+]${RESET} Traffic flow simulation and testing`,
-    `  ${FG.green}[+]${RESET} Configuration export to FortiGate CLI format`,
-    '',
-    `  ${DIM}Stack:${RESET}  React, TypeScript`,
-    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/fortisim`,
-    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
-
-export function getProjectFortiLogForge(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> FortiLogForge${RESET}`,
-    `  ${DIM}FortiGate log analysis and visualization${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Real-time log parsing and enrichment`,
-    `  ${FG.green}[+]${RESET} Interactive dashboards for security events`,
-    `  ${FG.green}[+]${RESET} Threat pattern detection and alerting`,
-    `  ${FG.green}[+]${RESET} Historical trend analysis and reporting`,
-    '',
-    `  ${DIM}Stack:${RESET}  React, TypeScript`,
-    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/fortilogforge`,
-    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
-
 export function getProjectPlaybookForge(): string {
   const lines = [
     '',
@@ -403,25 +387,6 @@ export function getProjectIntelWorkbench(): string {
     '',
     `  ${DIM}Stack:${RESET}  React, TypeScript`,
     `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/intel-workbench`,
-    `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
-    '',
-  ];
-  return lines.join(CRLF);
-}
-
-export function getProjectSOCShowcase(): string {
-  const lines = [
-    '',
-    `${BOLD}${FG.cyan}  >> SOC Showcase${RESET}`,
-    `  ${DIM}SOC Stack portfolio showcase with 5 design variants${RESET}`,
-    '',
-    `  ${FG.green}[+]${RESET} Five distinct UI/UX design implementations`,
-    `  ${FG.green}[+]${RESET} Responsive layouts for all screen sizes`,
-    `  ${FG.green}[+]${RESET} Dark/light theme support with smooth transitions`,
-    `  ${FG.green}[+]${RESET} Component library showcase`,
-    '',
-    `  ${DIM}Stack:${RESET}  React, TypeScript`,
-    `  ${DIM}GitHub:${RESET} https://github.com/solomonneas/soc-showcase`,
     `  ${DIM}Status:${RESET} ${FG.green}Completed${RESET}`,
     '',
   ];
